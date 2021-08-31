@@ -34,6 +34,22 @@ export type Player = {
   position: string;
 }
 
+enum Positions {
+  FWD,
+  MID,
+  DEF,
+  GCK
+}
+
+export type PlayerItem = {
+  name: string;
+  id: string;
+  match: string;
+  price: string;
+  position: Positions;
+  totalPoints: number;
+}
+
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
   BottomTabScreenProps<RootTabParamList, Screen>,
   NativeStackScreenProps<RootStackParamList>

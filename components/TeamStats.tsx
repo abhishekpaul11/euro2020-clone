@@ -11,7 +11,7 @@ const TeamStats = () => {
 
       <View style = {styles.valueContainer}>
         <Text style = {styles.label}>Remaining</Text>
-        <Text style = {styles.value}>{'\u20AC'}100</Text>
+        <Text style = {styles.value}>{'\u20AC'}100m</Text>
       </View>
     </View>
   )
