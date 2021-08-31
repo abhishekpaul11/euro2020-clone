@@ -29,6 +29,11 @@ export type RootTabParamList = {
   TabTwo: undefined;
 };
 
+export type Player = {
+  player: null;
+  position: string;
+}
+
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
   BottomTabScreenProps<RootTabParamList, Screen>,
   NativeStackScreenProps<RootStackParamList>

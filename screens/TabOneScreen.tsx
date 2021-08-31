@@ -1,17 +1,26 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, SafeAreaView, Pressable, Text } from 'react-native';
+import Field from "../components/Field";
+import TeamStats from "../components/TeamStats";
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
+export default function TabOneScreen() {
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+  const viewPlayers = () => {
+    console.warn('Hey')
+  }
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
-    </View>
+    <SafeAreaView style={styles.container}>
+
+      <TeamStats />
+
+      <Field />
+
+      <Pressable onPress={viewPlayers} style = {styles.button}>
+        <Text style={{fontWeight: 'bold'}}>View Players</Text>
+      </Pressable>
+
+    </SafeAreaView>
   );
 }
 
@@ -19,15 +28,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#4ccf4d'
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  button: {
+    backgroundColor: 'orange',
+    width: '90%',
+    marginTop: 'auto',
+    margin: 20,
+    padding: 10,
+    alignItems: 'center',
+    borderRadius: 50
+  }
 });
