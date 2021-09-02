@@ -2,10 +2,9 @@ import React, { useRef } from 'react';
 import { StyleSheet, SafeAreaView, Pressable, Text, View } from 'react-native';
 import Field from "../components/Field";
 import TeamStats from "../components/TeamStats";
-import PlayerListItem from "../components/PlayerListItem";
-import BottomSheet, { BottomSheetFlatList } from "@gorhom/bottom-sheet";
+import BottomSheet from "@gorhom/bottom-sheet";
 import Filters from "../components/Filters";
-import { players } from "../assets/data/players";
+import PlayersList from "../components/PlayersList";
 
 export default function TabOneScreen() {
 
@@ -34,17 +33,8 @@ export default function TabOneScreen() {
         index={-1}
         snapPoints={snapPoints}
         enablePanDownToClose={true}>
-        <Pressable onPress={() => filtersBottomSheet.current.expand()} style = {styles.button}>
-          <Text style={{fontWeight: 'bold'}}>Filters</Text>
-        </Pressable>
-        <BottomSheetFlatList
-          data={players}
-          renderItem={({item}) => (<PlayerListItem player={item}/>)}
-        />
-      </BottomSheet>
-
-      <BottomSheet ref={filtersBottomSheet} index={-1} enablePanDownToClose={true} snapPoints={snapPoints}>
         <Filters />
+        <PlayersList />
       </BottomSheet>
 
     </SafeAreaView>

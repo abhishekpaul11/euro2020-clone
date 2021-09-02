@@ -38,7 +38,7 @@ enum Positions {
   FWD,
   MID,
   DEF,
-  GCK
+  GK
 }
 
 export type PlayerItem = {
