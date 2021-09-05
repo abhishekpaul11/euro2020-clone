@@ -45,7 +45,7 @@ export type PlayerItem = {
   name: string;
   id: string;
   match: string;
-  price: string;
+  price: number;
   position: Positions;
   totalPoints: number;
 }

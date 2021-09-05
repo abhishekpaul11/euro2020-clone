@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, Suspense } from 'react';
 import { StyleSheet, SafeAreaView, Pressable, Text, View } from 'react-native';
 import Field from "../components/Field";
 import TeamStats from "../components/TeamStats";
@@ -34,7 +34,9 @@ export default function TabOneScreen() {
         snapPoints={snapPoints}
         enablePanDownToClose={true}>
         <Filters />
-        <PlayersList />
+        <Suspense fallback = {<Text>Loading</Text>}>
+          <PlayersList />
+        </Suspense>
       </BottomSheet>
 
     </SafeAreaView>

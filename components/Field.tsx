@@ -8,7 +8,6 @@ import { FontAwesome5 } from "@expo/vector-icons";
 
 const Field = () => {
   const players = useRecoilValue(myPlayersPosition)
-  console.log(players)
 
   return (
     <ImageBackground

@@ -35,3 +35,17 @@ export const myPlayersPosition = selector({
     return groupedPlayers
   }
 })
+
+export const numberOfPlayers = selector({
+  key: 'numberOfPlayers',
+  get: ({ get }) => {
+    return get(MyPlayersState).length
+  }
+})
+
+export const valueOfPlayers = selector({
+  key: 'valueOfPlayers',
+  get: ({ get }) => {
+    return get(MyPlayersState).reduce((acc, player) => acc + parseInt(player.price), 0)
+  }
+})
