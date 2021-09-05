@@ -2,16 +2,14 @@ import React from "react";
 import { StyleSheet, ImageBackground, Text, View } from "react-native";
 import field from "../assets/images/field.jpg";
 import Player from "./Player";
+import { useRecoilValue } from "recoil";
+import { myPlayersPosition } from "../atoms/MyTeam";
 import { FontAwesome5 } from "@expo/vector-icons";
 
-const players: {[key: string] : null[]} = {
-  FWD : [null, null, null],
-  MID : [null, null, null],
-  DEF : [null, null, null, null],
-  GKC : [null]
-}
-
 const Field = () => {
+  const players = useRecoilValue(myPlayersPosition)
+  console.log(players)
+
   return (
     <ImageBackground
       source={field}

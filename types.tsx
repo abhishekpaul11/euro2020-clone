@@ -34,11 +34,11 @@ export type Player = {
   position: string;
 }
 
-enum Positions {
-  FWD,
-  MID,
-  DEF,
-  GK
+export enum Positions {
+  FWD = 'FWD',
+  MID = 'MID',
+  DEF = 'DEF',
+  GK = 'GK'
 }
 
 export type PlayerItem = {

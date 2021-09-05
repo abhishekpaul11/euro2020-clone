@@ -9,7 +9,7 @@ const Player = (props) => {
   return (
     <View style = {styles.player}>
       <FontAwesome5 name={'tshirt'} size={35} color={player ? '#d170db' : '#5c5c5cbb'} />
-      <Text style = {styles.names}>{position}</Text>
+      <Text style = {styles.names}>{player ? player.name : position}</Text>
     </View>
   )
 }
