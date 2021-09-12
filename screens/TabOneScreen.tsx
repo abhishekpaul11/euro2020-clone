@@ -1,6 +1,7 @@
 import React, { useRef, Suspense } from 'react';
 import { StyleSheet, SafeAreaView, Pressable, Text, View } from 'react-native';
 import Field from "../components/Field";
+import { Feather } from '@expo/vector-icons';
 import TeamStats from "../components/TeamStats";
 import BottomSheet from "@gorhom/bottom-sheet";
 import Filters from "../components/Filters";
@@ -34,7 +35,7 @@ export default function TabOneScreen() {
         snapPoints={snapPoints}
         enablePanDownToClose={true}>
         <Filters />
-        <Suspense fallback = {<Text>Loading</Text>}>
+        <Suspense fallback = {<Feather name="loader" size={40} color="black" style={styles.loader}/>}>
           <PlayersList />
         </Suspense>
       </BottomSheet>
@@ -57,5 +58,9 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: 'center',
     borderRadius: 50
+  },
+  loader: {
+    alignSelf: 'center',
+    marginTop: '20%'
   }
 });
